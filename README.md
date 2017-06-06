@@ -6,7 +6,7 @@
 - Pre print http://mbio.asm.org/content/8/3/e00438-17.full
 ### Biopython exercises
 - Translation of DNA sequences
-´´´
+```
 def amino_maker (file,file_type):
     try:
         from Bio import SeqIO
@@ -23,9 +23,9 @@ def amino_maker (file,file_type):
         else: 
             print(seq_records.id ,": This sequence is not a multiple of 3")
     return amn_dic   
-    ´´´
-    - Fasta Parser
-   ´´´
+   ```
+ - Fasta Parser
+   ```
    def fasta_parser2(file):
     file_open = open(file)
     file_read = file_open.read()
@@ -47,6 +47,6 @@ def amino_maker (file,file_type):
         gene_dic[header_] = sequence_
         for values in gene_dic:
             print(values +'\n'+ gene_dic[values])
-   ´´´
+  ```
 
 
