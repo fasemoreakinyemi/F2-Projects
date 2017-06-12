@@ -47,7 +47,7 @@ def amino_maker (file,file_type):
         gene_dic[header_] = sequence_
         for values in gene_dic:
             print(values +'\n'+ gene_dic[values])
-  ```
+     ```
 ## Week 2
 ### Transcription Start Site annotation
 - data : https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2263196
