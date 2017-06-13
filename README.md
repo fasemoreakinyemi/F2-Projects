@@ -53,4 +53,8 @@ def amino_maker (file,file_type):
 - data : https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2263196
 - Genome : ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/026/965/GCF_000026965.1_ASM2696v1/
 - annogesic
+### TSS Prediction
+- TSS Predator
+- Tunning :  java -Xmx1G -jar
+- MasterTable and TSS statistics
 
