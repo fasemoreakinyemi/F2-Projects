@@ -58,3 +58,7 @@ def amino_maker (file,file_type):
 - Tunning :  java -Xmx1G -jar
 - MasterTable and TSS statistics
 
+### TSS Prediction WITH Tss Predator and IGB
+- installed IGB
+- dataset = https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1519465
+- Genome file = ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/Vibrio_cholerae/latest_assembly_versions/GCF_000006745.1_ASM674v1/
