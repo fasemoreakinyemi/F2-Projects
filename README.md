@@ -62,3 +62,26 @@ def amino_maker (file,file_type):
 - installed IGB
 - dataset = https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1519465
 - Genome file = ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/Vibrio_cholerae/latest_assembly_versions/GCF_000006745.1_ASM674v1/
+## Week 3
+### ANNOgesic
+- vibrio datases
+```
+TEX_LIBS="/home/mandela/Downloads/vibrio/GSM1519456_D47E_S1_0.1_minus_TEX_div_by_10536538.0_multi_by_5191739.0_forward.wig:notex:1:a:+ \
+/home/mandela/Downloads/vibrio/GSM1519456_D47E_S1_0.1_minus_TEX_div_by_10536538.0_multi_by_5191739.0_reverse.wig:notex:1:a:- \
+/home/mandela/Downloads/vibrio/GSM1519457_D47E_S1_0.1_plus_TEX_div_by_8186187.0_multi_by_5191739.0_forward.wig:tex:1:a:+ \
+/home/mandela/Downloads/vibrio/GSM1519457_D47E_S1_0.1_plus_TEX_div_by_8186187.0_multi_by_5191739.0_reverse.wig:tex:1:a:+ \
+/home/mandela/Downloads/vibrio/GSM1519464_WT_S1_0.1_minus_TEX_div_by_11591377.0_multi_by_5191739.0_forward.wig:notex:2:a:+ \
+/home/mandela/Downloads/vibrio/GSM1519464_WT_S1_0.1_minus_TEX_div_by_11591377.0_multi_by_5191739.0_reverse.wig:notex:2:a:+ \
+/home/mandela/Downloads/vibrio/GSM1519465_WT_S1_0.1_plus_TEX_div_by_5191739.0_multi_by_5191739.0_forward.wig:tex:2:a:+ \
+/home/mandela/Downloads/vibrio/GSM1519465_WT_S1_0.1_plus_TEX_div_by_5191739.0_multi_by_5191739.0_reverse.wig:tex:2:a:-"
+
+annogesic tss_ps \
+--tsspredator_path /home/mandela/Downloads/apps/TSSpredator-1.06.jar \
+--fasta_files /home/mandela/Downloads/vibrio/GCF_000006745.1_ASM674v1_genomic.fna \
+--annotation_files /home/mandela/Downloads/vibrio/GCF_000006745.1_ASM674v1_genomic.gff \
+--tex_notex_libs $TEX_LIBS \
+--condition_names nes_pred \
+--validate_gene \
+--replicate_tex all_1 \
+--project_path ANNOgesic
+```
