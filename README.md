@@ -64,7 +64,7 @@ def amino_maker (file,file_type):
 - Genome file = ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/Vibrio_cholerae/latest_assembly_versions/GCF_000006745.1_ASM674v1/
 ## Week 3
 ### ANNOgesic
-- vibrio datases
+- vibrio dataset
 ```
 TEX_LIBS="/home/mandela/Downloads/vibrio/GSM1519456_D47E_S1_0.1_minus_TEX_div_by_10536538.0_multi_by_5191739.0_forward.wig:notex:1:a:+ \
 /home/mandela/Downloads/vibrio/GSM1519456_D47E_S1_0.1_minus_TEX_div_by_10536538.0_multi_by_5191739.0_reverse.wig:notex:1:a:- \
