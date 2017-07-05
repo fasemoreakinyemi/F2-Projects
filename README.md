@@ -86,14 +86,14 @@ annogesic tss_ps \
 --project_path ANNOgesic
 ```
 ## Week 4 TSS Comparison
-# Datasets
+### Datasets
 - KAI (Vibrio) (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1519465)
 - Lars (Neisseria) (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE85252)
 - E. coli (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE78041)
 - Campylobacter (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE38883)
 - Helicobacter (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE67564)
-# Upstream sequece extraction code
-´´´
+- Upstream sequece extraction code
+```
 import pandas as pd
 anno_file = pd.read_csv('/home/mandela/ANNOgesic/output/TSSs/MasterTables/MasterTable_NC_000915.1/MasterTable.tsv', sep = '\t', comment = '#')
 k = open('heli.txt', 'w')
@@ -126,9 +126,9 @@ while i <= (len(seq_lst)-1):
     k.write(seq + '\n')
     i = i + 1
 k.close()
-´´´
-# Wget Script for downloading genome files
-´´´
+```
+- Wget Script for downloading genome files
+```
 source=ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/017/905/GCF_000017905.1_ASM1790v1/
 wget_dir=wget_folder
 if [! -d wget_folder]; then
@@ -139,4 +139,4 @@ wget -P $wget_dir ${source}/*fna.gz
 wget -P $wget_dir ${source}/*gff.gz
 gunzip $wget_dir/*gz
 
-´´´
+```
