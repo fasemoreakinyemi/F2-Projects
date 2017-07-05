@@ -85,3 +85,58 @@ annogesic tss_ps \
 --replicate_tex all_1 \
 --project_path ANNOgesic
 ```
+## Week 4 TSS Comparison
+# Datasets
+- KAI (Vibrio) (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1519465)
+- Lars (Neisseria) (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE85252)
+- E. coli (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE78041)
+- Campylobacter (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE38883)
+- Helicobacter (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE67564)
+# Upstream sequece extraction code
+´´´
+import pandas as pd
+anno_file = pd.read_csv('/home/mandela/ANNOgesic/output/TSSs/MasterTables/MasterTable_NC_000915.1/MasterTable.tsv', sep = '\t', comment = '#')
+k = open('heli.txt', 'w')
+d_anno_file = anno_file[anno_file['detected'] == 1]
+pos = d_anno_file['SuperPos']
+seqe = d_anno_file['Sequence -50 nt upstream + TSS (51nt)']
+gen = d_anno_file['Genome']
+loc = d_anno_file['Locus_tag']
+prod = d_anno_file['Product']
+seq_lst = []
+id_lst = []
+gen_lst = []
+loc_lst = []
+prod_lst = []
+for items in seqe:
+    seq_lst.append(items)
+for ele in pos:
+    id_lst.append(ele)
+for genes in gen:
+    gen_lst.append(genes)
+for products in prod:
+    prod_lst.append(products)
+for locus in loc:
+    loc_lst.append(locus)
+i = 0
+while i <= (len(seq_lst)-1):
+    ide = ('>' + str(id_lst[i]) + '|' + str(gen_lst[i]) + '|' + str(loc_lst[i]) + '|' + str(prod_lst[i]) + '|' + str(i))
+    seq= str(seq_lst[i])
+    k.write(ide + '\n')
+    k.write(seq + '\n')
+    i = i + 1
+k.close()
+´´´
+# Wget Script for downloading genome files
+´´´
+source=ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/017/905/GCF_000017905.1_ASM1790v1/
+wget_dir=wget_folder
+if [! -d wget_folder]; then
+        mkdir -p $wget_dir
+fi
+rm -rf $wget_dir
+wget -P $wget_dir ${source}/*fna.gz
+wget -P $wget_dir ${source}/*gff.gz
+gunzip $wget_dir/*gz
+
+´´´
